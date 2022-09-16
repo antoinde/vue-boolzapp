@@ -14,5 +14,54 @@ body {
 }
 
 /* ***********UTILITIES************ */
+.flex { display: flex; }
+.v-a-center { vertical-align: center; }
+.j-c-center { justify-content: center; }
+.grow { flex-grow: 1; }
+.shrink { flex-shrink: 1; }
+.column { flex-direction: column; }
+.row { flex-direction: row; }
+.c-green { background-color: #009688; }
+.c-white { background-color: #eaeaea; }
+.c-red { background-color: red; }
+.c-blue { background-color: blue; }
+.b-test { border: 5px dashed brown; }
 
 /* ***********CONTENT************ */
+.web-app-container {
+  margin: 25px auto;
+  max-width: 1200px;
+  height: calc(100vh - 50px);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img {
+  width: 100%;
+  border-radius: 50%;
+}
+.contacts {
+  width: 400px;
+}
+.logged-user {
+  background-color: #eaeaea;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.active-profile {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.profile-image {
+  width: 50px;
+}
+.top-grey-buttons {
+  display: flex;
+}
+.top-grey-buttons i {
+  margin: 0 5px;
+  color: grey;
+  font-size: 1.5rem;
+}
