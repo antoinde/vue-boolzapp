@@ -43,7 +43,7 @@ img {
 }
 .logged-user {
   background-color: #eaeaea;
-  border-bottom: 1px solid grey;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,9 +59,14 @@ img {
 }
 .top-grey-buttons {
   display: flex;
+  column-gap: 5px;
+  margin-right: 10px;
+}
+.top-grey-buttons button {
+  border-color: #eaeaea;
 }
 .top-grey-buttons i {
   margin: 0 5px;
-  color: grey;
+  color: #b1b1b1;
   font-size: 1.5rem;
 }
