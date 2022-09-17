@@ -4,6 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    
     <!-- collegamento a FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- collegamento al CSS -->
@@ -13,16 +14,14 @@
   </head>
   <body class="c-green">
     <!-- 
-    <i class="fas fa-bell-slash"></i>
     
     
     
     
-    <i class="fas fa-paperclip"></i>
-    <i class="fas fa-smile"></i>
-    <i class="fas fa-microphone"></i>
+    
+    
    -->
-   <div class="web-app-container c-white flex">
+   <div id="root" class="web-app-container c-white flex">
 
     <!-- ******** CONTACTS ******** -->
     <div class="contacts">
@@ -57,23 +56,60 @@
         <input type="text" placeholder="Cerca o inizia una nuova chat">
       </div>
       <div class="contacts-list">
-        contacts-list
+
+        <div v-for="contact in contacts" class="contact">
+          <div class="profile-image">
+            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+          </div>
+          <div class="profile-name">
+            <div><strong>{{ contact.name }}</strong></div>
+            <div class="tiny-grey"> {{ contact.messages[getLastMsg(contact.messages)]["message"] }} </div>
+          </div>
+          <div class="tiny-grey time">{{ contact.messages[getLastMsg(contact.messages)]["date"] }}</div>
+        </div>
+
       </div>
 
     </div>
 
     <!-- ******** CHAT ******** -->
-    <div class="chat c-blue grow">chat
+    <div class="chat grow">
 
-      <div class="selected-contact">selected-contact
-        <div class="active-contact">active-contact</div>
-        <div class="top-grey-buttons">top-grey-buttons</div>
+      <div class="selected-contact">
+        <div class="active-contact">
+
+          <div class="profile-image">
+            <img src="img/avatar_1.jpg" alt="Michele">
+          </div>
+          <div class="profile-name">
+            <div><strong>Michele</strong></div>
+            <div class="tiny-grey">Ultimo accesso oggi alle 12:00 </div>
+          </div>
+
+        </div>
+        <div class="top-grey-buttons">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button><i class="fas fa-paperclip"></i></button>
+          <button><i class="fas fa-ellipsis-v"></i></button>
+        </div>
       </div>
-      <div class="message-area">message-area
+      <div class="message-area">
+      
+        <div class="msg green-user">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum repellendus facere deleniti, minima totam modi odit nesciunt ratione molestiae sed sint cum a quibusdam nisi? Voluptatibus commodi voluptatum veritatis tempore.</p>
+          <div class="tiny-grey">15:30</div>
+        </div>
+
+        <div class="msg white-user">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nisi excepturi in provident. Tempora corporis voluptatum eaque delectus voluptatibus rem distinctio consectetur numquam debitis a beatae adipisci iusto, mollitia recusandae?</p>
+          <div class="tiny-grey">15:30</div>
+        </div>
 
       </div>
-      <div class="message-input-area">message-input-area
-
+      <div class="message-input-area">
+        <button><i class="fas fa-smile"></i></button>
+        <input type="text" placeholder="Scrivi un messaggio">
+        <button><i class="fas fa-microphone"></i></button>
       </div>
 
     </div>
@@ -83,6 +119,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.10/vue.min.js" 
    integrity="sha512-H8u5mlZT1FD7MRlnUsODppkKyk+VEiCmncej8yZW1k/wUT90OQon0F9DSf/2Qh+7L/5UHd+xTLrMszjHEZc2BA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   </script>
+  
   <!-- collegamento a JavaScript -->
+  <script type="text/javascript" src="js/contacts.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </html>
