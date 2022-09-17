@@ -109,3 +109,18 @@ img {
   color:slategrey;
   cursor: pointer;
 }
+.search {
+  padding: 5px;
+}
+.search button{
+  width: 15%;
+  padding: 5px 15px;
+  background-color: white;
+  border: 2px solid grey;
+}
+.search input {
+  width: 83%;
+  padding: 5px 15px;
+  border: 2px solid grey;
+
+}
