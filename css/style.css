@@ -19,6 +19,7 @@ img {
 }
 
 /* ***********UTILITIES************ */
+
 .flex { display: flex; }
 .v-a-center { vertical-align: center; }
 .j-c-center { justify-content: center; }
@@ -79,11 +80,15 @@ img {
 }
 .notification {
   background-color: #8edafc;
-  padding: 15px;
+  padding: 15px 20px;
+  font-size: 0.85rem;
   display: flex;
   column-gap: 10px;
 }
 .notification span{
+  font-size: 1.2rem;
+  height: 50px;
+  width: 50px;
   background-color: white;
   border-radius: 50%;
   display: flex;
@@ -94,6 +99,11 @@ img {
 }
 .notification span i{
   color: #8edafc;
+}
+.notification-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .notification u{
   color:slategrey;
