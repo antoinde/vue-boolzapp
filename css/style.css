@@ -23,6 +23,7 @@ img {
 .flex { display: flex; }
 .v-a-center { vertical-align: center; }
 .j-c-center { justify-content: center; }
+.j-c-end { justify-content: end; }
 .grow { flex-grow: 1; }
 .shrink { flex-shrink: 1; }
 .column { flex-direction: column; }
@@ -43,10 +44,12 @@ img {
 
 .contacts {
   width: 400px;
+  border-right: 2px solid #b1b1b1;
 }
 .logged-user {
   background-color: #eaeaea;
   padding: 5px;
+  height: 55px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -116,13 +119,102 @@ img {
 .search button{
   width: 15%;
   padding: 5px 15px;
-  background-color: white;
-  border: 2px solid grey;
   cursor: pointer;
 }
 .search input {
   width: 83%;
   padding: 5px 15px;
-  border: 2px solid grey;
-
 }
+.contacts-list {
+  background-color: white;
+  height: calc(100% - 200px);
+  overflow-y: scroll;
+}
+.contact {
+  background-color: #eaeaea;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  position: relative;
+}
+.contact:hover{
+  filter: brightness(1.2);
+}
+.tiny-grey {
+  font-size: 0.7rem;
+  color: grey;
+}
+.contact .time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.chat {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.selected-contact {
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+}
+.message-area {
+  flex-grow: 1;
+  background-image: url("../img/mine.jpg");
+}
+.message-input-area {
+  background-color: grey;
+}
+.selected-contact {
+  height: 55px;
+}
+.active-contact {
+display: flex;
+align-items: center;
+}
+.message-area {
+  padding: 10px 80px;
+  overflow-y: scroll;
+}
+.message-input-area {
+  height: 55px;
+  display: flex;
+  padding: 6px;
+  background-color: #eaeaea;
+}
+.message-input-area input{
+  flex-grow: 1;
+  padding: 10px
+}
+.message-input-area i{
+  color: #424242;
+  margin: 0 15px;
+  font-size: 1.2rem;
+}
+/* CHAT NUVOLETTE (user e computer) */
+.msg {
+  width: 350px;
+  background-color: brown;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+}
+.msg .tiny-grey{
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
+}
+.green-user {
+  background-color: #d5f9ba;
+  position: relative;
+  left: 50%;
+}
+.white-user {
+  background-color: #fff;
+  position: relative;
+}
+/* /CHAT NUVOLETTE (user e computer) */
