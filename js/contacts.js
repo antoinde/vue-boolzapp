@@ -3,6 +3,7 @@ const contacts = [
         name: 'Michele',
         avatar: '_1',
         visible: true,
+        activeContact: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -25,6 +26,7 @@ const contacts = [
         name: 'Fabio',
         avatar: '_2',
         visible: true,
+        activeContact: false,
         messages: [
             {
                 date: '20/03/2020 16:30:00',
@@ -47,6 +49,7 @@ const contacts = [
         name: 'Samuele',
         avatar: '_3',
         visible: true,
+        activeContact: false,
         messages: [
             {
                 date: '28/03/2020 10:10:40',
@@ -69,6 +72,7 @@ const contacts = [
         name: 'Alessandro B.',
         avatar: '_4',
         visible: true,
+        activeContact: false,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -86,6 +90,7 @@ const contacts = [
         name: 'Alessandro L.',
         avatar: '_5',
         visible: true,
+        activeContact: false,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -103,6 +108,7 @@ const contacts = [
         name: 'Claudia',
         avatar: '_6',
         visible: true,
+        activeContact: false,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -125,6 +131,7 @@ const contacts = [
         name: 'Federico',
         avatar: '_7',
         visible: true,
+        activeContact: false,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -142,6 +149,7 @@ const contacts = [
         name: 'Davide',
         avatar: '_8',
         visible: true,
+        activeContact: false,
         messages: [
             {
                 date: '10/01/2020 15:30:55',

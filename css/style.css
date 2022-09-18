@@ -164,6 +164,9 @@ img {
 .message-area {
   flex-grow: 1;
   background-image: url("../img/mine.jpg");
+  background-attachment: fixed;
+  padding: 10px 80px;
+  overflow-y: scroll;
 }
 .message-input-area {
   background-color: grey;
@@ -174,10 +177,6 @@ img {
 .active-contact {
 display: flex;
 align-items: center;
-}
-.message-area {
-  padding: 10px 80px;
-  overflow-y: scroll;
 }
 .message-input-area {
   height: 55px;
@@ -211,7 +210,7 @@ align-items: center;
 .green-user {
   background-color: #d5f9ba;
   position: relative;
-  left: 50%;
+  left: 45%;
 }
 .white-user {
   background-color: #fff;

@@ -13,14 +13,7 @@
 
   </head>
   <body class="c-green">
-    <!-- 
-    
-    
-    
-    
-    
-    
-   -->
+  
    <div id="root" class="web-app-container c-white flex">
 
     <!-- ******** CONTACTS ******** -->
@@ -57,7 +50,7 @@
       </div>
       <div class="contacts-list">
 
-        <div v-for="contact in contacts" class="contact">
+        <div v-for="(contact, index) in contacts" class="contact" @click="setActiveContact(index)">
           <div class="profile-image">
             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
           </div>
@@ -76,15 +69,19 @@
     <div class="chat grow">
 
       <div class="selected-contact">
-        <div class="active-contact">
-
-          <div class="profile-image">
-            <img src="img/avatar_1.jpg" alt="Michele">
-          </div>
-          <div class="profile-name">
-            <div><strong>Michele</strong></div>
-            <div class="tiny-grey">Ultimo accesso oggi alle 12:00 </div>
-          </div>
+        
+        <div v-for="(contact, index) in contacts" v-if="contact.activeContact === true" class="active-contact">
+          
+            
+            <div class="profile-image">
+              <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+            </div>
+            <div class="profile-name">
+              <div><strong>{{ contact.name }}</strong></div>
+              <div class="tiny-grey">Ultimo accesso oggi alle (DA IMPLEMENTARE) </div>
+            </div>
+  
+          
 
         </div>
         <div class="top-grey-buttons">
@@ -100,10 +97,11 @@
           <div class="tiny-grey">15:30</div>
         </div>
 
-        <div class="msg white-user">
+        <div v-for="" class="msg white-user">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nisi excepturi in provident. Tempora corporis voluptatum eaque delectus voluptatibus rem distinctio consectetur numquam debitis a beatae adipisci iusto, mollitia recusandae?</p>
           <div class="tiny-grey">15:30</div>
         </div>
+
 
       </div>
       <div class="message-input-area">
