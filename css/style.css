@@ -138,9 +138,11 @@ img {
   column-gap: 10px;
   position: relative;
 }
-.contact:hover{
-  filter: brightness(1.2);
+.evidenced_contact {
+  background-color: #fff;
+  border-left: 5px solid grey;
 }
+
 .tiny-grey {
   font-size: 0.7rem;
   color: grey;
@@ -161,6 +163,7 @@ img {
   display: flex;
   justify-content: space-between;
 }
+
 .message-area {
   flex-grow: 1;
   background-image: url("../img/mine.jpg");
@@ -174,9 +177,13 @@ img {
 .selected-contact {
   height: 55px;
 }
+.selected-contact img{
+  margin: 0 10px;
+}
 .active-contact {
 display: flex;
 align-items: center;
+column-gap: 20px;
 }
 .message-input-area {
   height: 55px;

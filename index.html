@@ -25,7 +25,7 @@
           <div class="profile-image">
             <img src="img/avatar_io.jpg" alt="My profile image">
           </div>
-          <div class="profile-name"><strong>Sofia</strong></div>
+          <div class="profile-name"><strong>Antonello</strong></div>
         </div>
 
         <div class="top-grey-buttons">
@@ -49,8 +49,8 @@
         <input type="text" placeholder="Cerca o inizia una nuova chat">
       </div>
       <div class="contacts-list">
-
-        <div v-for="(contact, index) in contacts" class="contact" @click="setActiveContact(index)">
+        <!--  LISTA DEI CONTATTI  -->
+        <div v-for="(contact, index) in contacts" class="contact" :class="contact.activeContact === true ? ' evidenced_contact' : '' " @click="setActiveContact(index)">
           <div class="profile-image">
             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
           </div>
@@ -67,7 +67,7 @@
 
     <!-- ******** CHAT ******** -->
     <div class="chat grow">
-
+      <!--  PROFILO SELEZIONATO  -->
       <div class="selected-contact">
         
         <div v-for="(contact, index) in contacts" v-if="contact.activeContact === true" class="active-contact">
@@ -78,11 +78,10 @@
             </div>
             <div class="profile-name">
               <div><strong>{{ contact.name }}</strong></div>
-              <div class="tiny-grey">Ultimo accesso oggi alle (DA IMPLEMENTARE) </div>
+              <div class="tiny-grey">Ultimo accesso oggi alle (ora ultimo messaggio) </div>
             </div>
   
-          
-
+    
         </div>
         <div class="top-grey-buttons">
           <button><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -90,18 +89,20 @@
           <button><i class="fas fa-ellipsis-v"></i></button>
         </div>
       </div>
+      <!--  LISTA DEI MESSAGGI  -->
       <div class="message-area">
       
-        <div v-for="contact in contacts[activeIndex].messages" class="msg" :class="contact.status === 'sent' ? 'green-user' : 'white-user'">
-          <p>{{ contact.message }}</p>
-          <div class="tiny-grey">{{ contact.date }}</div>
+        <div v-for="msg in contacts[activeIndex].messages" class="msg" :class="msg.status === 'sent' ? 'green-user' : 'white-user'">
+          <p>{{ msg.message }}</p>
+          <div class="tiny-grey">{{ msg.date }}</div>
         </div>
 
       </div>
+      <!--  INPUT DEL MESSAGGIO  -->
       <div class="message-input-area">
         <button><i class="fas fa-smile"></i></button>
-        <input type="text" placeholder="Scrivi un messaggio">
-        <button><i class="fas fa-microphone"></i></button>
+        <input type="text" placeholder="Scrivi un messaggio" v-model="getText" @keyUp.enter="sendMessage()">
+        <button ><i class="fas fa-microphone"></i></button>
       </div>
 
     </div>
