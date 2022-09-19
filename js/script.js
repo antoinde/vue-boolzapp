@@ -6,7 +6,10 @@ console.log("JavaScript is working properly! =) Let's code!");
 
 const app = new Vue ({
     el: '#root',
-    data: contacts,
+    data: {
+        activeIndex: 0,
+        contacts,
+    },
     methods: {
         getLastMsg(messagesArray){
             // console.log(messagesArray.length);
@@ -24,6 +27,7 @@ const app = new Vue ({
                 //se la posizione data coincide con i che scorro ..
                 if(position===i) //setto la nuova activeContact
                     contacts[i].activeContact=true;
+                    this.activeIndex=position;
             }
             console.log(contacts);
         }

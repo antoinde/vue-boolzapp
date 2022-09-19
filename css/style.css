@@ -200,12 +200,16 @@ align-items: center;
   margin-bottom: 8px;
   border-radius: 5px;
   padding: 10px;
+  font-size: 0.8rem;
   position: relative;
 }
 .msg .tiny-grey{
   position: absolute;
   right: 5px;
   bottom: 2px;
+}
+.msg p{
+  margin-bottom: 5px;
 }
 .green-user {
   background-color: #d5f9ba;
