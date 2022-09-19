@@ -7,6 +7,7 @@ console.log("JavaScript is working properly! =) Let's code!");
 const app = new Vue ({
     el: '#root',
     data: {
+        userToSearch: '',
         getText: '',
         activeIndex: 0,
         contacts,
@@ -83,6 +84,13 @@ const app = new Vue ({
             console.log(Day_Month_Year); // 19/09/2022
             console.log(Day_Month_Year + " " + HoursAndMinutes);
             return Day_Month_Year + " " + HoursAndMinutes;
+        },
+        startSearch(){
+            
+            // confronta la parola inserita con tutti i nomi dei contatti
+            // se la parola inserita e' vuota setta tutti i visible true
+            // se la parola inserita e' diversa da stringa vuota, setta tutti i visible false
+            //  e contemporaneamente se le lettere coincidono setta il contatto a true
         }
     }
 });
