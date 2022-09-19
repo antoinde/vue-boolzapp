@@ -67,6 +67,7 @@
 
     <!-- ******** CHAT ******** -->
     <div class="chat grow">
+
       <!--  PROFILO SELEZIONATO  -->
       <div class="selected-contact">
         
@@ -78,7 +79,7 @@
             </div>
             <div class="profile-name">
               <div><strong>{{ contact.name }}</strong></div>
-              <div class="tiny-grey">Ultimo accesso oggi alle (ora ultimo messaggio) </div>
+              <div class="tiny-grey">Ultimo accesso il {{ contact.messages[contact.messages.length -1]["date"] }} </div>
             </div>
   
     
