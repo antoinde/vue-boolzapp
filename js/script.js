@@ -53,7 +53,7 @@ const app = new Vue ({
                 setTimeout( () => {
                     const objectToPush = {
                         date: '',
-                        message: 'ok!',
+                        message: 'Ehi, ciao Antonello ! Dimmi tutto!',
                         status: 'riceived'
                     };
                     objectToPush.date=this.getNewDate();
@@ -88,9 +88,26 @@ const app = new Vue ({
         startSearch(){
             
             // confronta la parola inserita con tutti i nomi dei contatti
-            // se la parola inserita e' vuota setta tutti i visible true
-            // se la parola inserita e' diversa da stringa vuota, setta tutti i visible false
-            //  e contemporaneamente se le lettere coincidono setta il contatto a true
+            for(let i=0; i<this.contacts.length; i++) {
+                let dinamicWord = this.userToSearch;
+                let contactName = this.contacts[i]["name"];
+                contactName = contactName.toLowerCase();
+
+                console.log(i);
+                if(dinamicWord === '') {
+                    // se la parola inserita e' vuota setta tutti i visible true
+                    this.contacts[i].visible=true;
+                }
+                else{
+                    // se la parola inserita e' diversa da stringa vuota, setta tutti i visible false
+                    this.contacts[i].visible=false;
+                    //se le lettere inserite sono incluse, setta il contatto true
+                    if(contactName.includes(dinamicWord)){
+                        this.contacts[i].visible=true;
+                    }
+                }
+            }
+            
         }
     }
 });
